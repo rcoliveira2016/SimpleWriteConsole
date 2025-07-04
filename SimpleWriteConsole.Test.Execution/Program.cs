@@ -1,4 +1,4 @@
-﻿namespace SimpleConsole.Test.Execution
+﻿namespace SimpleWriteConsole.Test.Execution
 {
     internal class Program
     {

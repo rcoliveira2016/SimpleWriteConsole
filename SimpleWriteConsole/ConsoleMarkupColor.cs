@@ -1,7 +1,7 @@
-using SimpleConsole.Parser;
+using SimpleWriteConsole.Parser;
 using System;
 
-namespace SimpleConsole
+namespace SimpleWriteConsole
 {
     public static class ConsoleMarkupColor
     {

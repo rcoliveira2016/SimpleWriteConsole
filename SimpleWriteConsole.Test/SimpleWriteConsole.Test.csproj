@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleConsole\SimpleConsole.csproj" />
+    <ProjectReference Include="..\SimpleWriteConsole\SimpleWriteConsole.csproj" />
   </ItemGroup>
 
   <ItemGroup>

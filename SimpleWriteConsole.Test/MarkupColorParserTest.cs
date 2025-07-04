@@ -1,8 +1,8 @@
 using Xunit;
-using SimpleConsole.Parser;
+using SimpleWriteConsole.Parser;
 using System.Linq;
 
-namespace SimpleConsole.Test
+namespace SimpleWriteConsole.Test
 {
     public class MarkupColorParserTest
     {
