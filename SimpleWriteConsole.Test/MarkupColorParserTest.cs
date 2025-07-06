@@ -301,6 +301,40 @@ namespace SimpleWriteConsole.Test
             Assert.True(trailingText.IsTextNode);
             Assert.Equal(" trailing", trailingText.Content);
         }
+    
+
+        [Fact]
+        public void Parse_ComplexAndNestedString_ReturnsCorrectTree()
+        {
+            // Arrange
+            var text = @"### [blue]\[\[/blue][red]red[/red][blue]\]\[/blue]";
+
+            // Act
+            var result = MarkupColorParser.Parse(text);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(4, result.Children.Count);
+
+            // ###
+            var firstNode = result.Children[0];
+            Assert.True(firstNode.IsTextNode);
+            Assert.Equal("### ", firstNode.Content);
+
+            // [blue][[/blue]
+            var blueNode = result.Children[1];
+            AssetTagAndTextNotTagsChilds(blueNode, "blue", "[");
+
+
+            // [red]red[/red]
+            var redNode = result.Children[2];
+            AssetTagAndTextNotTagsChilds(redNode, "red", "red");
+
+
+            // [blue]][/blue]
+            var lastBlueNode = result.Children[3];;
+            AssetTagAndTextNotTagsChilds(lastBlueNode, "blue", "]");
+        }
 
         private void AssetTagAndTextNotTagsChilds(MarkupNode node, string tag, string text)
         {
